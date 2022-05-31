@@ -11,7 +11,7 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:
-          - linux
+          - Linux64
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: Library
-          key: Library-linux
+          key: Library-Linux64
           restore-keys: Library-
       - name: Build Unity Project
         uses: game-ci/unity-builder@v2
@@ -30,7 +30,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: linux
+          targetPlatform: Linux64
           unityVersion: 2020.3.26f1
       - uses: actions/upload-artifact@v2
         with:
