@@ -1,7 +1,7 @@
 name: CI_Test
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   build:
@@ -34,5 +34,5 @@ jobs:
           unityVersion: 2020.3.26f1
       - uses: actions/upload-artifact@v2
         with:
-        name: Build
-        path: build
+          name: Build
+          path: build
